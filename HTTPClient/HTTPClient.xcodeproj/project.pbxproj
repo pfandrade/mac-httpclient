@@ -13,9 +13,6 @@
 		8D15AC2F0486D014006FF6A4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165FFE840EACC02AAC07 /* InfoPlist.strings */; };
 		8D15AC320486D014006FF6A4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A37F4B0FDCFA73011CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D15AC340486D014006FF6A4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */; };
-		D30DDFAA0F3E92BD00274E93 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D30DDFA90F3E92BD00274E93 /* Sparkle.framework */; };
-		D30DDFB50F3E92CC00274E93 /* Sparkle.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = D30DDFA90F3E92BD00274E93 /* Sparkle.framework */; };
-		D30DDFB80F3E92D700274E93 /* httpclient_dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = D30DDFB70F3E92D700274E93 /* httpclient_dsa_pub.pem */; };
 		D357D4900EE6233A009D62AE /* HCWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = D357D48F0EE6233A009D62AE /* HCWindowController.m */; };
 		D357D4A30EE623C1009D62AE /* HCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D357D4A20EE623C1009D62AE /* HCAppDelegate.m */; };
 		D357D4DC0EE62527009D62AE /* DefaultValues.plist in Resources */ = {isa = PBXBuildFile; fileRef = D357D4DB0EE62527009D62AE /* DefaultValues.plist */; };
@@ -24,8 +21,6 @@
 		D357D4E60EE625C4009D62AE /* HCPreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = D357D4E40EE625C4009D62AE /* HCPreferencesWindow.xib */; };
 		D357D5240EE62958009D62AE /* HTTPServiceCFNetworkImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = D357D5230EE62958009D62AE /* HTTPServiceCFNetworkImpl.m */; };
 		D357D53D0EE6300E009D62AE /* HCWindowController+HTTPAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = D357D53B0EE6300E009D62AE /* HCWindowController+HTTPAuth.m */; };
-		D357D5520EE632CF009D62AE /* appl.icns in Resources */ = {isa = PBXBuildFile; fileRef = D357D54E0EE632CF009D62AE /* appl.icns */; };
-		D357D5530EE632CF009D62AE /* file.icns in Resources */ = {isa = PBXBuildFile; fileRef = D357D54F0EE632CF009D62AE /* file.icns */; };
 		D357D5540EE632CF009D62AE /* HeaderNames.plist in Resources */ = {isa = PBXBuildFile; fileRef = D357D5500EE632CF009D62AE /* HeaderNames.plist */; };
 		D357D5550EE632CF009D62AE /* HeaderValues.plist in Resources */ = {isa = PBXBuildFile; fileRef = D357D5510EE632CF009D62AE /* HeaderValues.plist */; };
 		D357D5630EE63376009D62AE /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D357D5620EE63376009D62AE /* Security.framework */; };
@@ -39,6 +34,9 @@
 		D385FE800F05F3C400DB2946 /* html.css in Resources */ = {isa = PBXBuildFile; fileRef = D385FE7F0F05F3C400DB2946 /* html.css */; };
 		D385FFA80F0615EB00DB2946 /* TDParseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D385FFA70F0615EB00DB2946 /* TDParseKit.framework */; };
 		D385FFB50F06168800DB2946 /* TDParseKit.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = D385FFA70F0615EB00DB2946 /* TDParseKit.framework */; };
+		D38FE6FF13232209003EB2D3 /* httpclient.icns in Resources */ = {isa = PBXBuildFile; fileRef = D38FE6FD13232209003EB2D3 /* httpclient.icns */; };
+		D38FE70013232209003EB2D3 /* httpclientdoc.icns in Resources */ = {isa = PBXBuildFile; fileRef = D38FE6FE13232209003EB2D3 /* httpclientdoc.icns */; };
+		D38FE70213232217003EB2D3 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = D38FE70113232217003EB2D3 /* iTunesArtwork.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -48,7 +46,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D30DDFB50F3E92CC00274E93 /* Sparkle.framework in Copy Frameworks */,
 				D385FFB50F06168800DB2946 /* TDParseKit.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
@@ -69,8 +66,6 @@
 		32DBCF750370BD2300C91783 /* HTTPClient_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPClient_Prefix.pch; sourceTree = "<group>"; };
 		8D15AC360486D014006FF6A4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D15AC370486D014006FF6A4 /* HTTP Client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HTTP Client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D30DDFA90F3E92BD00274E93 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = frameworks/Sparkle.framework; sourceTree = "<group>"; };
-		D30DDFB70F3E92D700274E93 /* httpclient_dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = httpclient_dsa_pub.pem; path = res/httpclient_dsa_pub.pem; sourceTree = "<group>"; };
 		D357D48E0EE6233A009D62AE /* HCWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HCWindowController.h; path = src/HCWindowController.h; sourceTree = "<group>"; };
 		D357D48F0EE6233A009D62AE /* HCWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HCWindowController.m; path = src/HCWindowController.m; sourceTree = "<group>"; };
 		D357D4A10EE623C1009D62AE /* HCAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HCAppDelegate.h; path = src/HCAppDelegate.h; sourceTree = "<group>"; };
@@ -86,8 +81,6 @@
 		D357D5230EE62958009D62AE /* HTTPServiceCFNetworkImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HTTPServiceCFNetworkImpl.m; path = src/HTTPServiceCFNetworkImpl.m; sourceTree = "<group>"; };
 		D357D53B0EE6300E009D62AE /* HCWindowController+HTTPAuth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "HCWindowController+HTTPAuth.m"; path = "src/HCWindowController+HTTPAuth.m"; sourceTree = "<group>"; };
 		D357D53C0EE6300E009D62AE /* HCWindowController+HTTPAuth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "HCWindowController+HTTPAuth.h"; path = "src/HCWindowController+HTTPAuth.h"; sourceTree = "<group>"; };
-		D357D54E0EE632CF009D62AE /* appl.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = appl.icns; path = res/appl.icns; sourceTree = "<group>"; };
-		D357D54F0EE632CF009D62AE /* file.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = file.icns; path = res/file.icns; sourceTree = "<group>"; };
 		D357D5500EE632CF009D62AE /* HeaderNames.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = HeaderNames.plist; path = res/HeaderNames.plist; sourceTree = "<group>"; };
 		D357D5510EE632CF009D62AE /* HeaderValues.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = HeaderValues.plist; path = res/HeaderValues.plist; sourceTree = "<group>"; };
 		D357D5620EE63376009D62AE /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = /System/Library/Frameworks/Security.framework; sourceTree = "<absolute>"; };
@@ -105,6 +98,9 @@
 		D385FE7E0F05F27200DB2946 /* html.grammar */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = html.grammar; path = res/html.grammar; sourceTree = "<group>"; };
 		D385FE7F0F05F3C400DB2946 /* html.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = html.css; path = res/html.css; sourceTree = "<group>"; };
 		D385FFA70F0615EB00DB2946 /* TDParseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TDParseKit.framework; path = frameworks/TDParseKit.framework; sourceTree = "<group>"; };
+		D38FE6FD13232209003EB2D3 /* httpclient.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = httpclient.icns; path = res/httpclient.icns; sourceTree = "<group>"; };
+		D38FE6FE13232209003EB2D3 /* httpclientdoc.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = httpclientdoc.icns; path = res/httpclientdoc.icns; sourceTree = "<group>"; };
+		D38FE70113232217003EB2D3 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iTunesArtwork.png; path = res/iTunesArtwork.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,7 +111,6 @@
 				8D15AC340486D014006FF6A4 /* Cocoa.framework in Frameworks */,
 				D357D5630EE63376009D62AE /* Security.framework in Frameworks */,
 				D385FFA80F0615EB00DB2946 /* TDParseKit.framework in Frameworks */,
-				D30DDFAA0F3E92BD00274E93 /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,7 +120,6 @@
 		1058C7A6FEA54F5311CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D30DDFA90F3E92BD00274E93 /* Sparkle.framework */,
 				D385FFA70F0615EB00DB2946 /* TDParseKit.framework */,
 				D357D5620EE63376009D62AE /* Security.framework */,
 				1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */,
@@ -196,9 +190,9 @@
 		2A37F4B8FDCFA73011CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				D30DDFB70F3E92D700274E93 /* httpclient_dsa_pub.pem */,
-				D357D54E0EE632CF009D62AE /* appl.icns */,
-				D357D54F0EE632CF009D62AE /* file.icns */,
+				D38FE70113232217003EB2D3 /* iTunesArtwork.png */,
+				D38FE6FD13232209003EB2D3 /* httpclient.icns */,
+				D38FE6FE13232209003EB2D3 /* httpclientdoc.icns */,
 				D357D4DB0EE62527009D62AE /* DefaultValues.plist */,
 				D357D5500EE632CF009D62AE /* HeaderNames.plist */,
 				D357D5510EE632CF009D62AE /* HeaderValues.plist */,
@@ -294,6 +288,7 @@
 			isa = PBXProject;
 			buildConfigurationList = C05733CB08A9546B00998B17 /* Build configuration list for PBXProject "HTTPClient" */;
 			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
 				en,
@@ -316,17 +311,17 @@
 				8D15AC2F0486D014006FF6A4 /* InfoPlist.strings in Resources */,
 				1DDD582C0DA1D0D100B32029 /* HCDocumentWindow.xib in Resources */,
 				1DDD582D0DA1D0D100B32029 /* MainMenu.xib in Resources */,
-				D357D4DC0EE62527009D62AE /* DefaultValues.plist in Resources */,
 				D357D4E60EE625C4009D62AE /* HCPreferencesWindow.xib in Resources */,
-				D357D5520EE632CF009D62AE /* appl.icns in Resources */,
-				D357D5530EE632CF009D62AE /* file.icns in Resources */,
+				D357D4DC0EE62527009D62AE /* DefaultValues.plist in Resources */,
 				D357D5540EE632CF009D62AE /* HeaderNames.plist in Resources */,
 				D357D5550EE632CF009D62AE /* HeaderValues.plist in Resources */,
 				D385FD780F05AA1A00DB2946 /* mini_css.grammar in Resources */,
 				D385FDDE0F05D2A500DB2946 /* json.css in Resources */,
 				D385FDDF0F05D2A500DB2946 /* json.grammar in Resources */,
 				D385FE800F05F3C400DB2946 /* html.css in Resources */,
-				D30DDFB80F3E92D700274E93 /* httpclient_dsa_pub.pem in Resources */,
+				D38FE6FF13232209003EB2D3 /* httpclient.icns in Resources */,
+				D38FE70013232209003EB2D3 /* httpclientdoc.icns in Resources */,
+				D38FE70213232217003EB2D3 /* iTunesArtwork.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,6 +396,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -416,6 +412,8 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				PRODUCT_NAME = "HTTP Client";
+				SDKROOT = macosx10.6;
+				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Debug;
 		};
@@ -423,6 +421,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Todd Ditchendorf";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -435,6 +435,8 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				PRODUCT_NAME = "HTTP Client";
+				SDKROOT = macosx10.6;
+				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Release;
 		};
