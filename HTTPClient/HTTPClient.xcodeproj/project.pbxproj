@@ -32,11 +32,71 @@
 		D385FDDE0F05D2A500DB2946 /* json.css in Resources */ = {isa = PBXBuildFile; fileRef = D385FDDC0F05D2A500DB2946 /* json.css */; };
 		D385FDDF0F05D2A500DB2946 /* json.grammar in Resources */ = {isa = PBXBuildFile; fileRef = D385FDDD0F05D2A500DB2946 /* json.grammar */; };
 		D385FE800F05F3C400DB2946 /* html.css in Resources */ = {isa = PBXBuildFile; fileRef = D385FE7F0F05F3C400DB2946 /* html.css */; };
-		D385FFB50F06168800DB2946 /* TDParseKit.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = D385FFA70F0615EB00DB2946 /* TDParseKit.framework */; };
 		D38FE6FF13232209003EB2D3 /* httpclient.icns in Resources */ = {isa = PBXBuildFile; fileRef = D38FE6FD13232209003EB2D3 /* httpclient.icns */; };
 		D38FE70013232209003EB2D3 /* httpclientdoc.icns in Resources */ = {isa = PBXBuildFile; fileRef = D38FE6FE13232209003EB2D3 /* httpclientdoc.icns */; };
 		D38FE70213232217003EB2D3 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = D38FE70113232217003EB2D3 /* iTunesArtwork.png */; };
+		D38FE77A13233147003EB2D3 /* ParseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D38FE76D13233143003EB2D3 /* ParseKit.framework */; };
+		D38FE77D1323315A003EB2D3 /* ParseKit.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = D38FE76D13233143003EB2D3 /* ParseKit.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D38FE76C13233143003EB2D3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D38FE75C13233143003EB2D3 /* ParseKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DC2EF5B0486A6940098B216 /* ParseKit.framework */;
+			remoteInfo = ParseKit;
+		};
+		D38FE76E13233143003EB2D3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D38FE75C13233143003EB2D3 /* ParseKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D389F1CE0F1965E600558235 /* JSParseKit.framework */;
+			remoteInfo = JSParseKit;
+		};
+		D38FE77013233143003EB2D3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D38FE75C13233143003EB2D3 /* ParseKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D3FDC5830FFC4BFC00F1F797 /* libparsekit.a */;
+			remoteInfo = ParseKitMobile;
+		};
+		D38FE77213233143003EB2D3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D38FE75C13233143003EB2D3 /* ParseKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D3C7D87A0A411FBF005DD154 /* Tests.octest */;
+			remoteInfo = Tests;
+		};
+		D38FE77413233143003EB2D3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D38FE75C13233143003EB2D3 /* ParseKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D33494100E2963FD00406085 /* DemoApp.app */;
+			remoteInfo = DemoApp;
+		};
+		D38FE77613233143003EB2D3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D38FE75C13233143003EB2D3 /* ParseKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D34185040E520D3F0081B0DC /* DebugApp.app */;
+			remoteInfo = DebugApp;
+		};
+		D38FE77813233143003EB2D3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D38FE75C13233143003EB2D3 /* ParseKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D389F2030F196A7500558235 /* JSDemoApp.app */;
+			remoteInfo = JSDemoApp;
+		};
+		D38FE77B13233151003EB2D3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D38FE75C13233143003EB2D3 /* ParseKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216 /* ParseKit */;
+			remoteInfo = ParseKit;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		D357DAD10EE8E28A009D62AE /* Copy Frameworks */ = {
@@ -45,7 +105,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D385FFB50F06168800DB2946 /* TDParseKit.framework in Copy Frameworks */,
+				D38FE77D1323315A003EB2D3 /* ParseKit.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -96,10 +156,10 @@
 		D385FDDD0F05D2A500DB2946 /* json.grammar */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = json.grammar; path = res/json.grammar; sourceTree = "<group>"; };
 		D385FE7E0F05F27200DB2946 /* html.grammar */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = html.grammar; path = res/html.grammar; sourceTree = "<group>"; };
 		D385FE7F0F05F3C400DB2946 /* html.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = html.css; path = res/html.css; sourceTree = "<group>"; };
-		D385FFA70F0615EB00DB2946 /* TDParseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TDParseKit.framework; path = frameworks/TDParseKit.framework; sourceTree = "<group>"; };
 		D38FE6FD13232209003EB2D3 /* httpclient.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = httpclient.icns; path = res/httpclient.icns; sourceTree = "<group>"; };
 		D38FE6FE13232209003EB2D3 /* httpclientdoc.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = httpclientdoc.icns; path = res/httpclientdoc.icns; sourceTree = "<group>"; };
 		D38FE70113232217003EB2D3 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iTunesArtwork.png; path = res/iTunesArtwork.png; sourceTree = "<group>"; };
+		D38FE75C13233143003EB2D3 /* ParseKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ParseKit.xcodeproj; path = lib/ParseKit/ParseKit.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +167,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D38FE77A13233147003EB2D3 /* ParseKit.framework in Frameworks */,
 				8D15AC340486D014006FF6A4 /* Cocoa.framework in Frameworks */,
 				D357D5630EE63376009D62AE /* Security.framework in Frameworks */,
 			);
@@ -118,7 +179,6 @@
 		1058C7A6FEA54F5311CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D385FFA70F0615EB00DB2946 /* TDParseKit.framework */,
 				D357D5620EE63376009D62AE /* Security.framework */,
 				1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */,
 			);
@@ -146,6 +206,7 @@
 		2A37F4AAFDCFA73011CA2CEA /* HTTPClient */ = {
 			isa = PBXGroup;
 			children = (
+				D38FE75C13233143003EB2D3 /* ParseKit.xcodeproj */,
 				2A37F4ABFDCFA73011CA2CEA /* Classes */,
 				2A37F4AFFDCFA73011CA2CEA /* Other Sources */,
 				2A37F4B8FDCFA73011CA2CEA /* Resources */,
@@ -257,6 +318,20 @@
 			name = Grammars;
 			sourceTree = "<group>";
 		};
+		D38FE75D13233143003EB2D3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D38FE76D13233143003EB2D3 /* ParseKit.framework */,
+				D38FE76F13233143003EB2D3 /* JSParseKit.framework */,
+				D38FE77113233143003EB2D3 /* libparsekit.a */,
+				D38FE77313233143003EB2D3 /* Tests.octest */,
+				D38FE77513233143003EB2D3 /* DemoApp.app */,
+				D38FE77713233143003EB2D3 /* DebugApp.app */,
+				D38FE77913233143003EB2D3 /* JSDemoApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -272,6 +347,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				D38FE77C13233151003EB2D3 /* PBXTargetDependency */,
 			);
 			name = HTTPClient;
 			productInstallPath = "$(HOME)/Applications";
@@ -293,12 +369,70 @@
 			);
 			mainGroup = 2A37F4AAFDCFA73011CA2CEA /* HTTPClient */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = D38FE75D13233143003EB2D3 /* Products */;
+					ProjectRef = D38FE75C13233143003EB2D3 /* ParseKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				8D15AC270486D014006FF6A4 /* HTTPClient */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		D38FE76D13233143003EB2D3 /* ParseKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ParseKit.framework;
+			remoteRef = D38FE76C13233143003EB2D3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D38FE76F13233143003EB2D3 /* JSParseKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = JSParseKit.framework;
+			remoteRef = D38FE76E13233143003EB2D3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D38FE77113233143003EB2D3 /* libparsekit.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libparsekit.a;
+			remoteRef = D38FE77013233143003EB2D3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D38FE77313233143003EB2D3 /* Tests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = Tests.octest;
+			remoteRef = D38FE77213233143003EB2D3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D38FE77513233143003EB2D3 /* DemoApp.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = DemoApp.app;
+			remoteRef = D38FE77413233143003EB2D3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D38FE77713233143003EB2D3 /* DebugApp.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = DebugApp.app;
+			remoteRef = D38FE77613233143003EB2D3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D38FE77913233143003EB2D3 /* JSDemoApp.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = JSDemoApp.app;
+			remoteRef = D38FE77813233143003EB2D3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		8D15AC2B0486D014006FF6A4 /* Resources */ = {
@@ -345,6 +479,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D38FE77C13233151003EB2D3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ParseKit;
+			targetProxy = D38FE77B13233151003EB2D3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		089C165FFE840EACC02AAC07 /* InfoPlist.strings */ = {
@@ -396,16 +538,14 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/frameworks\"",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = HTTPClient_Prefix.pch;
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/lib/ParseKit/include\"";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				PRODUCT_NAME = "HTTP Client";
@@ -421,13 +561,11 @@
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Todd Ditchendorf";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/frameworks\"",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = HTTPClient_Prefix.pch;
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/lib/ParseKit/include\"";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				PRODUCT_NAME = "HTTP Client";
