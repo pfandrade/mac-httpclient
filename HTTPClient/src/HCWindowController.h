@@ -11,7 +11,7 @@
 @class TDSourceCodeTextView;
 @class TDHtmlSyntaxHighlighter;
 
-@interface HCWindowController : NSWindowController {
+@interface HCWindowController : NSWindowController <NSComboBoxCellDataSource> {
     IBOutlet NSComboBox *URLComboBox;
     IBOutlet NSComboBox *methodComboBox;
     IBOutlet NSTableView *headersTable;

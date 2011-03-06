@@ -64,7 +64,7 @@
         [dict setObject:[windowController.headersController arrangedObjects] forKey:@"headers"];
         
         result = [NSKeyedArchiver archivedDataWithRootObject:dict];
-        if (!result) [NSException raise:@"UnknownError" format:nil];
+        if (!result) [[NSException exceptionWithName:@"UnknownError" reason:@"UnknownError" userInfo:nil] raise];
     } @catch (NSException *e) {
         *outError = [NSError errorWithDomain:NSOSStatusErrorDomain code:writErr userInfo:[e userInfo]];
     }
@@ -76,7 +76,7 @@
     BOOL result = YES;
     @try {
         self.config = [NSKeyedUnarchiver unarchiveObjectWithData:data];
-        if (!config) [NSException raise:@"UnknownError" format:nil];
+        if (!config) [[NSException exceptionWithName:@"UnknownError" reason:@"UnknownError" userInfo:nil] raise];
     } @catch (NSException *e) {
         *outError = [NSError errorWithDomain:NSOSStatusErrorDomain code:readErr userInfo:[e userInfo]];
         result = NO;
