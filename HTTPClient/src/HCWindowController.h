@@ -56,7 +56,7 @@
 - (IBAction)clear:(id)sender;
 - (IBAction)showRequest:(id)sender;
 - (IBAction)showResponse:(id)sender;
-- (IBAction)showMultipartBodyView:(id)sender;
+//- (IBAction)showMultipartBodyView:(id)sender;
 - (IBAction)showNormalBodyView:(id)sender;
 - (IBAction)runAttachFileSheet:(id)sender;
 

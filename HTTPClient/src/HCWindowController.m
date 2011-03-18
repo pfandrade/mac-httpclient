@@ -170,10 +170,10 @@
 }
 
 
-- (IBAction)showMultipartBodyView:(id)sender {
-    self.bodyShown = YES;
-    self.multipartBodyShown = YES;
-}
+//- (IBAction)showMultipartBodyView:(id)sender {
+//    self.bodyShown = YES;
+//    self.multipartBodyShown = YES;
+//}
 
 
 - (IBAction)showNormalBodyView:(id)sender {
@@ -269,19 +269,20 @@
 
 
 - (NSComboBoxCell *)comboBoxCellWithTag:(int)tag {
-    NSComboBoxCell *cbCell = [[[NSComboBoxCell alloc] init] autorelease];
-    [cbCell setEditable:YES];
-    [cbCell setFocusRingType:NSFocusRingTypeNone];
-    [cbCell setControlSize:NSSmallControlSize];
-    [cbCell setFont:[self miniSystemFont]];
-    [cbCell setUsesDataSource:YES];
-    [cbCell setDataSource:self];
-    [cbCell setTarget:self];
-    [cbCell setAction:@selector(handleComboBoxTextChanged:)];
-    [cbCell setTag:tag];
-    [cbCell setNumberOfVisibleItems:12];
-    [cbCell setCompletes:YES];
-    return cbCell;
+    NSComboBoxCell *cell = [[[NSComboBoxCell alloc] init] autorelease];
+    [cell setEditable:YES];
+    [cell setFocusRingType:NSFocusRingTypeNone];
+    [cell setControlSize:NSSmallControlSize];
+    [cell setFont:[self miniSystemFont]];
+    [cell setUsesDataSource:YES];
+    [cell setDataSource:self];
+    [cell setTarget:self];
+    [cell setAction:@selector(handleComboBoxTextChanged:)];
+    [cell setSendsActionOnEndEditing:YES];
+    [cell setTag:tag];
+    [cell setNumberOfVisibleItems:12];
+    [cell setCompletes:YES];
+    return cell;
 }
 
 
@@ -329,7 +330,7 @@
 
 - (void)handleComboBoxTextChanged:(id)sender {
     NSInteger col = [sender clickedColumn];
-    NSInteger row = [sender clickedRow];
+//    NSInteger row = [sender clickedRow];
     NSMutableDictionary *header = [[headersController selectedObjects] objectAtIndex:0];
     
     //NSLog(@"row: %i, col: %i",rowIndex,colIndex);
@@ -340,18 +341,18 @@
     }
     
     // if Content-type: multipart/form-data was chosen, we must do some special mutipartformdata-y stuff
-    NSTableView *tv = (NSTableView *)sender;
-    NSTableColumn *column = [[tv tableColumns] objectAtIndex:col];
-    NSString *name  = [[column dataCellForRow:row] stringValue];
-    NSString *value = [[column dataCellForRow:row] stringValue];
+//    NSTableView *tv = (NSTableView *)sender;
+//    NSTableColumn *column = [[tv tableColumns] objectAtIndex:col];
+//    NSString *name  = [[column dataCellForRow:row] stringValue];
+//    NSString *value = [[column dataCellForRow:row] stringValue];
     
-    if ([[name lowercaseString] isEqualToString:@"content-type"]) {
-        if ([[value lowercaseString] isEqualToString:@"multipart/form-data"]) {
-            [self showMultipartBodyView:self];
-        } else {
-            [self showNormalBodyView:self];
-        }
-    }
+//    if ([[name lowercaseString] isEqualToString:@"content-type"]) {
+//        if ([[value lowercaseString] isEqualToString:@"multipart/form-data"]) {
+//            [self showMultipartBodyView:self];
+//        } else {
+//            [self showNormalBodyView:self];
+//        }
+//    }
 }
 
 
@@ -458,13 +459,16 @@
 // trim out the user-friendly UA names in any user-agent string header values
 - (void)cleanUserAgentStringsInHeaders:(NSArray *)headers {
     for (id headerDict in headers) {
-        if (NSOrderedSame == [[headerDict objectForKey:@"name"] caseInsensitiveCompare:@"user-agent"]) {
+        NSString *name = [headerDict objectForKey:@"name"];
+        if ([name length] && NSOrderedSame == [name caseInsensitiveCompare:@"user-agent"]) {
             NSString *value = [headerDict objectForKey:@"value"];
             NSString *marker = @" --- ";
             NSRange r = [value rangeOfString:marker];
             if (NSNotFound != r.location) {
                 value = [value substringFromIndex:r.location + marker.length];
-                [headerDict setObject:value forKey:@"value"];
+                if (value) {
+                    [headerDict setObject:value forKey:@"value"];
+                }
             }
         }
     }
