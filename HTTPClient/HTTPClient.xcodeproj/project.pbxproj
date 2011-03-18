@@ -44,56 +44,56 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = D38FE75C13233143003EB2D3 /* ParseKit.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 8DC2EF5B0486A6940098B216 /* ParseKit.framework */;
+			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
 			remoteInfo = ParseKit;
 		};
 		D38FE76E13233143003EB2D3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D38FE75C13233143003EB2D3 /* ParseKit.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = D389F1CE0F1965E600558235 /* JSParseKit.framework */;
+			remoteGlobalIDString = D389F1CE0F1965E600558235;
 			remoteInfo = JSParseKit;
 		};
 		D38FE77013233143003EB2D3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D38FE75C13233143003EB2D3 /* ParseKit.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = D3FDC5830FFC4BFC00F1F797 /* libparsekit.a */;
+			remoteGlobalIDString = D3FDC5830FFC4BFC00F1F797;
 			remoteInfo = ParseKitMobile;
 		};
 		D38FE77213233143003EB2D3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D38FE75C13233143003EB2D3 /* ParseKit.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = D3C7D87A0A411FBF005DD154 /* Tests.octest */;
+			remoteGlobalIDString = D3C7D87A0A411FBF005DD154;
 			remoteInfo = Tests;
 		};
 		D38FE77413233143003EB2D3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D38FE75C13233143003EB2D3 /* ParseKit.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = D33494100E2963FD00406085 /* DemoApp.app */;
+			remoteGlobalIDString = D33494100E2963FD00406085;
 			remoteInfo = DemoApp;
 		};
 		D38FE77613233143003EB2D3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D38FE75C13233143003EB2D3 /* ParseKit.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = D34185040E520D3F0081B0DC /* DebugApp.app */;
+			remoteGlobalIDString = D34185040E520D3F0081B0DC;
 			remoteInfo = DebugApp;
 		};
 		D38FE77813233143003EB2D3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D38FE75C13233143003EB2D3 /* ParseKit.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = D389F2030F196A7500558235 /* JSDemoApp.app */;
+			remoteGlobalIDString = D389F2030F196A7500558235;
 			remoteInfo = JSDemoApp;
 		};
 		D38FE77B13233151003EB2D3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D38FE75C13233143003EB2D3 /* ParseKit.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 8DC2EF4F0486A6940098B216 /* ParseKit */;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
 			remoteInfo = ParseKit;
 		};
 /* End PBXContainerItemProxy section */
