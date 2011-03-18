@@ -467,7 +467,7 @@
         }
     }
 
-    NSColor *bgColor = [self isSyntaxHighlightOn] ? [NSColor colorWithDeviceRed:30./255. green:30./255. blue:36./255. alpha:1.] : [NSColor whiteColor];
+    NSColor *bgColor = [self isSyntaxHighlightOn] ? [NSColor colorWithDeviceRed:30.0/255.0 green:30.0/255.0 blue:36.0/255.0 alpha:1.0] : [NSColor whiteColor];
     NSColor *ipColor = [self isSyntaxHighlightOn] ? [NSColor whiteColor] : [NSColor blackColor];
     
     [requestTextView setBackgroundColor:bgColor];
