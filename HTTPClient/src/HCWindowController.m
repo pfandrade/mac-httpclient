@@ -25,6 +25,7 @@
 - (void)setupBodyTextView;
 - (NSFont *)miniSystemFont;
 - (NSComboBoxCell *)comboBoxCellWithTag:(int)tag;
+- (NSMutableDictionary *)selectedHeader;
 - (NSArray *)methodsWithPrefixInFieldEditor:(NSText *)text;
 - (NSArray *)headerNamesWithPrefixInFieldEditor:(NSText *)text;
 - (NSArray *)headerNamesWithPrefix:(NSString *)s;
@@ -244,7 +245,7 @@
 
 
 - (void)setupFonts {
-    NSFont *monaco = [NSFont fontWithName:@"Monaco" size:10.];
+    NSFont *monaco = [NSFont fontWithName:@"Monaco" size:10.0];
 //    [bodyTextView setFont:monaco];
     [requestTextView setFont:monaco];
     [responseTextView setFont:monaco];
@@ -265,6 +266,26 @@
 
 - (NSFont *)miniSystemFont {
     return [NSFont systemFontOfSize:[NSFont systemFontSizeForControlSize:NSSmallControlSize]];
+}
+
+
+- (NSMutableDictionary *)selectedHeader {
+    //NSInteger col = [sender clickedColumn];
+    NSInteger row = [headersTable clickedRow];
+    NSMutableDictionary *header = nil;
+    
+    if (-1 != row) {
+        header = [[headersController arrangedObjects] objectAtIndex:row];
+    } else if ([[headersController selectedObjects] count]) {
+        header = [[headersController selectedObjects] objectAtIndex:0];
+    } else {
+//        NSEvent *evt = [[self window] currentEvent];
+//        NSPoint p = [headersTable convertPoint:[evt locationInWindow] fromView:nil];
+//        NSInteger row = [headersTable rowAtPoint:p];
+//        header = [[headersController arrangedObjects] objectAtIndex:row];            
+    }
+    
+    return header;
 }
 
 
@@ -329,9 +350,9 @@
 
 
 - (void)handleComboBoxTextChanged:(id)sender {
-    NSInteger col = [sender clickedColumn];
-//    NSInteger row = [sender clickedRow];
-    NSMutableDictionary *header = [[headersController selectedObjects] objectAtIndex:0];
+    NSInteger col = [headersTable clickedColumn];
+//    NSInteger row = [headersTable clickedRow];
+    NSMutableDictionary *header = [self selectedHeader];
     
     //NSLog(@"row: %i, col: %i",rowIndex,colIndex);
     if (0 == col) { // name changed
@@ -565,7 +586,7 @@
 - (id)comboBoxCell:(NSComboBoxCell *)cell objectValueForItemAtIndex:(NSInteger)index {
     BOOL isValueCell = [cell tag];
     if (isValueCell) {
-        NSDictionary *header = [[headersController selectedObjects] objectAtIndex:0];
+        NSDictionary *header = [self selectedHeader];
         NSString *name = [[header objectForKey:@"name"] lowercaseString];
         
         if ([self isNameRequiringTodaysDateString:name]) {
@@ -583,7 +604,7 @@
 - (NSInteger)numberOfItemsInComboBoxCell:(NSComboBoxCell *)cell {
     BOOL isValueCell = [cell tag];
     if (isValueCell) {
-        NSDictionary *header = [[headersController selectedObjects] objectAtIndex:0];
+        NSDictionary *header = [self selectedHeader];
         NSString *name = [[header objectForKey:@"name"] lowercaseString];
         
         if ([self isNameRequiringTodaysDateString:name]) {
@@ -601,7 +622,7 @@
 - (NSString *)comboBoxCell:(NSComboBoxCell *)cell completedString:(NSString *)s {
     BOOL isValueCell = [cell tag];
     if (isValueCell) {
-        NSDictionary *header = [[headersController selectedObjects] objectAtIndex:0];
+        NSDictionary *header = [self selectedHeader];
         NSString *name = [[header objectForKey:@"name"] lowercaseString];
         
         NSArray *values = [headerValues objectForKey:name];
