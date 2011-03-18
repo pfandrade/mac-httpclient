@@ -12,8 +12,8 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="100101"/>
 			<integer value="6"/>
+			<integer value="100101"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -1342,6 +1342,7 @@
 				<string key="NSScreenRect">{{0, 0}, {1440, 878}}</string>
 				<string key="NSMinSize">{404, 362}</string>
 				<string key="NSMaxSize">{1.79769e+308, 1.79769e+308}</string>
+				<string key="NSFrameAutosaveName">HCDocumentWindow</string>
 			</object>
 			<object class="NSCustomObject" id="796877042">
 				<string key="NSClassName">NSApplication</string>
@@ -3278,9 +3279,9 @@
 					<integer value="1"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
-					<string>{{116, 150}, {340, 206}}</string>
+					<string>{{414, 150}, {340, 206}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{116, 150}, {340, 206}}</string>
+					<string>{{414, 150}, {340, 206}}</string>
 					<integer value="1"/>
 					<integer value="1"/>
 					<string>{213, 107}</string>
@@ -3346,9 +3347,9 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{469, 215}, {735, 625}}</string>
+					<string>{{469, 131}, {735, 625}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{469, 215}, {735, 625}}</string>
+					<string>{{469, 131}, {735, 625}}</string>
 					<integer value="1"/>
 					<string>{{201, 387}, {507, 413}}</string>
 					<integer value="1"/>
@@ -3408,14 +3409,12 @@
 							<string>historyMenuItemAction:</string>
 							<string>openLocation:</string>
 							<string>runAttachFileSheet:</string>
-							<string>showMultipartBodyView:</string>
 							<string>showNormalBodyView:</string>
 							<string>showRequest:</string>
 							<string>showResponse:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 							<string>id</string>
@@ -3435,7 +3434,6 @@
 							<string>historyMenuItemAction:</string>
 							<string>openLocation:</string>
 							<string>runAttachFileSheet:</string>
-							<string>showMultipartBodyView:</string>
 							<string>showNormalBodyView:</string>
 							<string>showRequest:</string>
 							<string>showResponse:</string>
@@ -3460,10 +3458,6 @@
 							</object>
 							<object class="IBActionInfo">
 								<string key="name">runAttachFileSheet:</string>
-								<string key="candidateClassName">id</string>
-							</object>
-							<object class="IBActionInfo">
-								<string key="name">showMultipartBodyView:</string>
 								<string key="candidateClassName">id</string>
 							</object>
 							<object class="IBActionInfo">
