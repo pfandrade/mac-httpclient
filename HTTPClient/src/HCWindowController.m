@@ -120,7 +120,11 @@
 
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-    [[self document] updateChangeCount:NSChangeDone];
+    id old = [change objectForKey:NSKeyValueChangeOldKey];
+    id new = [change objectForKey:NSKeyValueChangeNewKey];
+    if ((old && !new) || (!old && new) || ![old isEqualTo:new]) {
+        [[self document] updateChangeCount:NSChangeDone];
+    }
 }
 
 
@@ -692,10 +696,10 @@
 
 
 - (void)startObservingCommand:(id)c {
-    [c addObserver:self forKeyPath:@"URLString" options:NSKeyValueObservingOptionNew context:NULL];
-    [c addObserver:self forKeyPath:@"body" options:NSKeyValueObservingOptionNew context:NULL];
-    [c addObserver:self forKeyPath:@"method" options:NSKeyValueObservingOptionNew context:NULL];
-    [c addObserver:self forKeyPath:@"followRedirects" options:NSKeyValueObservingOptionNew context:NULL];
+    [c addObserver:self forKeyPath:@"URLString" options:NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew context:NULL];
+    [c addObserver:self forKeyPath:@"body" options:NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew context:NULL];
+    [c addObserver:self forKeyPath:@"method" options:NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew context:NULL];
+    [c addObserver:self forKeyPath:@"followRedirects" options:NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew context:NULL];
 }
 
 
