@@ -40,7 +40,8 @@
 		windowController.bodyShown = [[config objectForKey:@"bodyShown"] boolValue];
 		windowController.multipartBodyShown = [[config objectForKey:@"multipartBodyShown"] boolValue];
 		windowController.command = [config objectForKey:@"command"];
-		[windowController.headersController addObjects:[config objectForKey:@"headers"]];
+//		[windowController.headersController addObjects:[config objectForKey:@"headers"]];
+		[windowController.headersController setContent:[config objectForKey:@"headers"]];
 		self.config = nil;
 	}
 	

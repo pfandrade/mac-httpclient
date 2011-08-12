@@ -92,7 +92,7 @@
     NSString *host = URL.host;
     UInt16 port = URL.port.integerValue;
     OSType protocol = [self protocolForURL:URL isProxy:forProxy];
-    void *passwordData;
+    void *passwordBytes = NULL;
     UInt32 len;
     OSStatus status = SecKeychainFindInternetPassword(NULL,
                                                       host.length,
@@ -107,7 +107,7 @@
                                                       protocol,
                                                       kSecAuthenticationTypeDefault,
                                                       &len,
-                                                      &passwordData,
+                                                      &passwordBytes,
                                                       &result);
     
     if (errSecItemNotFound == status) {
@@ -115,13 +115,18 @@
     } else if (status) {
         //NSLog(@"error while trying to find in keychain");
     } else {
-        NSData *data = [NSData dataWithBytes:passwordData length:len];
-        (*passwordString) = [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease];
+        if (passwordBytes) {
+            if (len) {
+                NSData *data = [NSData dataWithBytes:passwordBytes length:len];
+                if ([data length]) {
+                    (*passwordString) = [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease];
+                }
+            }
+            
+            SecKeychainItemFreeContent(NULL, passwordBytes);
+        }
     }
     
-    if (passwordData) {
-        SecKeychainItemFreeContent(NULL, passwordData);
-    }
     return result;
 }
 

@@ -2,9 +2,9 @@
 <archive type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="7.10">
 	<data>
 		<int key="IBDocument.SystemTarget">1050</int>
-		<string key="IBDocument.SystemVersion">10J3210</string>
+		<string key="IBDocument.SystemVersion">10K540</string>
 		<string key="IBDocument.InterfaceBuilderVersion">823</string>
-		<string key="IBDocument.AppKitVersion">1038.35</string>
+		<string key="IBDocument.AppKitVersion">1038.36</string>
 		<string key="IBDocument.HIToolboxVersion">461.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -2460,6 +2460,30 @@
 					</object>
 					<int key="connectionID">100286</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">authPasswordTextField</string>
+						<reference key="source" ref="512844837"/>
+						<reference key="destination" ref="406959911"/>
+					</object>
+					<int key="connectionID">100287</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">authUsernameTextField</string>
+						<reference key="source" ref="512844837"/>
+						<reference key="destination" ref="49596036"/>
+					</object>
+					<int key="connectionID">100288</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">authMessageTextField</string>
+						<reference key="source" ref="512844837"/>
+						<reference key="destination" ref="855873889"/>
+					</object>
+					<int key="connectionID">100289</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -3374,7 +3398,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">100286</int>
+			<int key="maxID">100289</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -3479,6 +3503,7 @@
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>URLComboBox</string>
+							<string>authMessageTextField</string>
 							<string>authPasswordTextField</string>
 							<string>authUsernameTextField</string>
 							<string>bodyTextView</string>
@@ -3496,6 +3521,7 @@
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>NSComboBox</string>
+							<string>NSTextField</string>
 							<string>NSTextField</string>
 							<string>NSTextField</string>
 							<string>NSTextView</string>
@@ -3516,6 +3542,7 @@
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>URLComboBox</string>
+							<string>authMessageTextField</string>
 							<string>authPasswordTextField</string>
 							<string>authUsernameTextField</string>
 							<string>bodyTextView</string>
@@ -3535,6 +3562,10 @@
 							<object class="IBToOneOutletInfo">
 								<string key="name">URLComboBox</string>
 								<string key="candidateClassName">NSComboBox</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">authMessageTextField</string>
+								<string key="candidateClassName">NSTextField</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">authPasswordTextField</string>

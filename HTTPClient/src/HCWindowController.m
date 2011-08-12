@@ -75,8 +75,17 @@
 
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-    self.service = nil;
+    self.URLComboBox = nil;
+    self.methodComboBox = nil;
+    self.headersTable = nil;
+    self.bodyTextView = nil;
+    self.tabView = nil;
+    self.requestTextView = nil;
+    self.responseTextView = nil;
+    self.requestScrollView = nil;
+    self.responseScrollView = nil;
     self.headersController = nil;
+    self.service = nil;
     self.command = nil;
     self.highlightedRawRequest = nil;
     self.highlightedRawResponse = nil;
@@ -86,6 +95,10 @@
     self.attachedFilePath = nil;
     self.attachedFilename = nil;
     self.syntaxHighlighter = nil;
+    self.httpAuthSheet = nil;
+    self.authMessageTextField = nil;
+    self.authUsernameTextField = nil;
+    self.authPasswordTextField = nil;
     self.authUsername = nil;
     self.authPassword = nil;
     self.authMessage = nil;
@@ -138,6 +151,9 @@
     }
     
     self.busy = YES;
+    
+    URLString = [URLString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    [command setObject:URLString forKey:@"URLString"];
     
     if (![URLString hasPrefix:@"http://"] && ![URLString hasPrefix:@"https://"]) {
         URLString = [NSString stringWithFormat:@"http://%@", URLString];
@@ -498,7 +514,10 @@
 
 - (void)requestCompleted:(id)cmd {
     if ([[command objectForKey:@"followRedirects"] boolValue]) {
-        [URLComboBox setStringValue:[cmd objectForKey:@"finalURLString"]];
+        NSString *str = [cmd objectForKey:@"finalURLString"];
+        if ([str length]) {
+            [URLComboBox setStringValue:str];
+        }
     }
     
     self.command = cmd;
@@ -664,15 +683,31 @@
 }
 
 
+- (void)stopObservingCommand:(id)c {
+    [c removeObserver:self forKeyPath:@"URLString"];
+    [c removeObserver:self forKeyPath:@"body"];
+    [c removeObserver:self forKeyPath:@"method"];
+    [c removeObserver:self forKeyPath:@"followRedirects"];
+}
+
+
+- (void)startObservingCommand:(id)c {
+    [c addObserver:self forKeyPath:@"URLString" options:NSKeyValueObservingOptionNew context:NULL];
+    [c addObserver:self forKeyPath:@"body" options:NSKeyValueObservingOptionNew context:NULL];
+    [c addObserver:self forKeyPath:@"method" options:NSKeyValueObservingOptionNew context:NULL];
+    [c addObserver:self forKeyPath:@"followRedirects" options:NSKeyValueObservingOptionNew context:NULL];
+}
+
+
 - (void)setCommand:(id)c {
     if (command != c) {
+        
+        [self stopObservingCommand:command];
+        
         [command autorelease];
         command = [c retain];
         
-        [command addObserver:self forKeyPath:@"URLString" options:NSKeyValueObservingOptionNew context:NULL];
-        [command addObserver:self forKeyPath:@"body" options:NSKeyValueObservingOptionNew context:NULL];
-        [command addObserver:self forKeyPath:@"method" options:NSKeyValueObservingOptionNew context:NULL];
-        [command addObserver:self forKeyPath:@"followRedirects" options:NSKeyValueObservingOptionNew context:NULL];
+        [self startObservingCommand:command];
     }
 }
 
@@ -691,8 +726,17 @@
     }
 }
 
-@synthesize service;
+@synthesize URLComboBox;
+@synthesize methodComboBox;
+@synthesize headersTable;
+@synthesize bodyTextView;
+@synthesize tabView;
+@synthesize requestTextView;
+@synthesize responseTextView;
+@synthesize requestScrollView;
+@synthesize responseScrollView;
 @synthesize headersController;
+@synthesize service;
 @synthesize command;
 @synthesize highlightedRawRequest;
 @synthesize highlightedRawResponse;
@@ -705,6 +749,10 @@
 @synthesize attachedFilePath;
 @synthesize attachedFilename;
 @synthesize syntaxHighlighter;
+@synthesize httpAuthSheet;
+@synthesize authMessageTextField;
+@synthesize authUsernameTextField;
+@synthesize authPasswordTextField;
 @synthesize authUsername;
 @synthesize authPassword;
 @synthesize authMessage;

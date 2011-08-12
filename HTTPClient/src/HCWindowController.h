@@ -12,16 +12,17 @@
 @class TDHtmlSyntaxHighlighter;
 
 @interface HCWindowController : NSWindowController <NSComboBoxCellDataSource> {
-    IBOutlet NSComboBox *URLComboBox;
-    IBOutlet NSComboBox *methodComboBox;
-    IBOutlet NSTableView *headersTable;
-    IBOutlet NSTextView *bodyTextView;
-    IBOutlet NSTabView *tabView;
-    IBOutlet TDSourceCodeTextView *requestTextView;
-    IBOutlet TDSourceCodeTextView *responseTextView;
-    IBOutlet NSScrollView *requestScrollView;
-    IBOutlet NSScrollView *responseScrollView;
-    IBOutlet NSArrayController *headersController;
+    NSComboBox *URLComboBox;
+    NSComboBox *methodComboBox;
+    NSTableView *headersTable;
+    NSTextView *bodyTextView;
+    NSTabView *tabView;
+    TDSourceCodeTextView *requestTextView;
+    TDSourceCodeTextView *responseTextView;
+    NSScrollView *requestScrollView;
+    NSScrollView *responseScrollView;
+    NSArrayController *headersController;
+
     id <HTTPService>service;
     
     NSMutableDictionary *command;
@@ -41,9 +42,10 @@
     TDHtmlSyntaxHighlighter *syntaxHighlighter;
     
     // HTTPAuth
-    IBOutlet NSPanel *httpAuthSheet;
-    IBOutlet NSTextField *authUsernameTextField;
-    IBOutlet NSTextField *authPasswordTextField;
+    NSPanel *httpAuthSheet;
+    NSTextField *authMessageTextField;
+    NSTextField *authUsernameTextField;
+    NSTextField *authPasswordTextField;
     
     NSString *authUsername;
     NSString *authPassword;
@@ -60,8 +62,18 @@
 - (IBAction)showNormalBodyView:(id)sender;
 - (IBAction)runAttachFileSheet:(id)sender;
 
+@property (nonatomic, retain) IBOutlet NSComboBox *URLComboBox;
+@property (nonatomic, retain) IBOutlet NSComboBox *methodComboBox;
+@property (nonatomic, retain) IBOutlet NSTableView *headersTable;
+@property (nonatomic, retain) IBOutlet NSTextView *bodyTextView;
+@property (nonatomic, retain) IBOutlet NSTabView *tabView;
+@property (nonatomic, retain) IBOutlet TDSourceCodeTextView *requestTextView;
+@property (nonatomic, retain) IBOutlet TDSourceCodeTextView *responseTextView;
+@property (nonatomic, retain) IBOutlet NSScrollView *requestScrollView;
+@property (nonatomic, retain) IBOutlet NSScrollView *responseScrollView;
+@property (nonatomic, retain) IBOutlet NSArrayController *headersController;
+
 @property (nonatomic, retain) id <HTTPService>service;
-@property (nonatomic, retain) NSArrayController *headersController;
 
 @property (nonatomic, retain) id command;
 @property (nonatomic, copy) NSAttributedString *highlightedRawRequest;
@@ -80,8 +92,13 @@
 
 @property (nonatomic, retain) TDHtmlSyntaxHighlighter *syntaxHighlighter;
 
-@property (nonatomic, copy) NSString *authUsername;
-@property (nonatomic, copy) NSString *authPassword;
-@property (nonatomic, copy) NSString *authMessage;
+@property (nonatomic, retain) IBOutlet NSPanel *httpAuthSheet;
+@property (nonatomic, retain) IBOutlet NSTextField *authMessageTextField;
+@property (nonatomic, retain) IBOutlet NSTextField *authUsernameTextField;
+@property (nonatomic, retain) IBOutlet NSTextField *authPasswordTextField;
+
+@property (nonatomic, retain) NSString *authUsername;
+@property (nonatomic, retain) NSString *authPassword;
+@property (nonatomic, retain) NSString *authMessage;
 @property (nonatomic) BOOL rememberAuthPassword;
 @end

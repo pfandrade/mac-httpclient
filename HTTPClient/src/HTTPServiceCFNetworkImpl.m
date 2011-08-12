@@ -84,7 +84,10 @@ static BOOL isAuthChallengeStatusCode(NSInteger statusCode) {
     NSString *finalURLString = nil;
     NSString *rawResponse = [self makeHTTPRequestWithURL:URL method:method body:body headers:headers followRedirects:followRedirects getFinalURLString:&finalURLString];
     
-    if (finalURLString.length) {
+    if (![finalURLString length]) {
+        finalURLString = URLString;
+    }
+    if (finalURLString) {
         [command setObject:finalURLString forKey:@"finalURLString"];
     }
     
@@ -135,6 +138,14 @@ static BOOL isAuthChallengeStatusCode(NSInteger statusCode) {
         
         BOOL forProxy = isAuthChallengeForProxyStatusCode(responseStatusCode);
         auth = CFHTTPAuthenticationCreateFromResponse(kCFAllocatorDefault, response);
+
+        CFStreamError streamErr1;
+        if (!CFHTTPAuthenticationIsValid(auth, &streamErr1)) {
+            // kCFStreamErrorDomainCustom == -1
+            NSLog(@"OH BOTHER. Can't add add auth credentials to request. dunno why. FAIL. %d %d", streamErr1.domain, streamErr1.error);
+            result = nil;
+            break;
+        }
         
         NSString *scheme = [(id)CFHTTPAuthenticationCopyMethod(auth) autorelease];
         NSString *realm  = [(id)CFHTTPAuthenticationCopyRealm(auth) autorelease];
@@ -146,7 +157,7 @@ static BOOL isAuthChallengeStatusCode(NSInteger statusCode) {
         NSString *password = nil;
         
         // try the previous username/password first? do we really wanna do that?
-        if (0 == count && self.authUsername.length && self.authPassword.length) {
+        if (0 == count && [self.authUsername length] && [self.authPassword length]) {
             username = self.authUsername;
             password = self.authPassword;
         } 
@@ -181,7 +192,8 @@ static BOOL isAuthChallengeStatusCode(NSInteger statusCode) {
             [creds setObject:[domain absoluteString] forKey:(id)kCFHTTPAuthenticationAccountDomain];
         }
         
-        Boolean credentialsApplied = CFHTTPMessageApplyCredentialDictionary(request, auth, (CFDictionaryRef)creds, NULL);
+        CFStreamError streamErr2;
+        Boolean credentialsApplied = CFHTTPMessageApplyCredentialDictionary(request, auth, (CFDictionaryRef)creds, &streamErr2);
         
         if (auth) {
             CFRelease(auth);
@@ -189,7 +201,8 @@ static BOOL isAuthChallengeStatusCode(NSInteger statusCode) {
         }
         
         if (!credentialsApplied) {
-            NSLog(@"OH BOTHER. Can't add add auth credentials to request. dunno why. FAIL.");
+            // kCFStreamErrorDomainCustom == -1
+            NSLog(@"OH BOTHER. Can't add add auth credentials to request. dunno why. FAIL. %d %d", streamErr2.domain, streamErr2.error);
             result = nil;
             break;
         }
@@ -263,8 +276,9 @@ static BOOL isAuthChallengeStatusCode(NSInteger statusCode) {
         UInt8 buf[BUFSIZE];
         CFIndex numBytesRead = CFReadStreamRead(stream, buf, BUFSIZE);
         if (numBytesRead < 0) {
-            CFStreamError error = CFReadStreamGetError(stream);
-            NSString *msg = [NSString stringWithFormat:@"Network Error. Domain: %d, Code: %d", error.domain, error.error];
+            CFErrorRef error = CFReadStreamCopyError(stream);
+            NSString *msg = [NSString stringWithFormat:@"Network Error. %@", [(id)CFErrorCopyDescription(error) autorelease]];
+            CFRelease(error);
             NSLog(@"%@", msg);
             [self failure:msg];
             responseBodyData = nil;
