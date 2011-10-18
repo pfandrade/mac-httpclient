@@ -13,6 +13,8 @@
 #import "TDSourceCodeTextView.h"
 #import "TDHtmlSyntaxHighlighter.h"
 #import "HCHistoryManager.h"
+#import <GTMOAuth/GTMOAuthAuthentication.h>
+#import "HTTPServiceGTMOAuthImpl.h"
 
 @interface HCWindowController ()
 - (BOOL)shouldPlaySounds;
@@ -170,7 +172,29 @@
     [self cleanUserAgentStringsInHeaders:headers];
     
     [command setObject:headers forKey:@"headers"];
-    [service sendHTTPRequest:command];
+
+    
+    
+    if([[command objectForKey:@"useOAuth"] boolValue]){
+        self.service = [[[HTTPServiceGTMOAuthImpl alloc] initWithDelegate:self] autorelease];
+        NSString *consumerKey = [[NSUserDefaults standardUserDefaults] objectForKey:@"OAuthConsumerKey"];
+        NSString *consumerSecret = [[NSUserDefaults standardUserDefaults] objectForKey:@"OAuthConsumerSecret"];
+        NSString *accessTokenKey = [[NSUserDefaults standardUserDefaults] objectForKey:@"OAuthAccessTokenKey"];
+        NSString *accessTokenSecret = [[NSUserDefaults standardUserDefaults] objectForKey:@"OAuthAccessTokenSecret"];
+        
+        GTMOAuthAuthentication *authentication = 
+        [[GTMOAuthAuthentication alloc] initWithSignatureMethod:kGTMOAuthSignatureMethodHMAC_SHA1 
+                                                    consumerKey:consumerKey
+                                                     privateKey:consumerSecret];
+        [authentication setTokenSecret:accessTokenSecret];
+        [authentication setAccessToken:accessTokenKey];
+        
+        [(HTTPServiceGTMOAuthImpl *)self.service setAuth:authentication];
+        [authentication release];
+    } else {
+        self.service = [[[NSClassFromString(@"HTTPServiceCFNetworkImpl") alloc] initWithDelegate:self] autorelease];
+    }
+    [self.service sendHTTPRequest:command];
 }
 
 

@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		1DDD582C0DA1D0D100B32029 /* HCDocumentWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58280DA1D0D100B32029 /* HCDocumentWindow.xib */; };
 		1DDD582D0DA1D0D100B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD582A0DA1D0D100B32029 /* MainMenu.xib */; };
+		276ACBED144C928D0063635B /* GTMOAuth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 276ACBEC144C928D0063635B /* GTMOAuth.framework */; };
+		276ACBF0144C93010063635B /* HTTPServiceGTMOAuthImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 276ACBEF144C93010063635B /* HTTPServiceGTMOAuthImpl.m */; };
+		276ACBF5144CA0BE0063635B /* GTMOAuth.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 276ACBEC144C928D0063635B /* GTMOAuth.framework */; };
 		8D15AC2C0486D014006FF6A4 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2A37F4B9FDCFA73011CA2CEA /* Credits.rtf */; };
 		8D15AC2F0486D014006FF6A4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165FFE840EACC02AAC07 /* InfoPlist.strings */; };
 		8D15AC320486D014006FF6A4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A37F4B0FDCFA73011CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
@@ -106,6 +109,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				D38FE77D1323315A003EB2D3 /* ParseKit.framework in Copy Frameworks */,
+				276ACBF5144CA0BE0063635B /* GTMOAuth.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -118,6 +122,9 @@
 		13E42FBA07B3F13500E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 		1DDD58290DA1D0D100B32029 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/HCDocumentWindow.xib; sourceTree = "<group>"; };
 		1DDD582B0DA1D0D100B32029 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		276ACBEC144C928D0063635B /* GTMOAuth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GTMOAuth.framework; path = frameworks/GTMOAuth.framework; sourceTree = "<group>"; };
+		276ACBEE144C93010063635B /* HTTPServiceGTMOAuthImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HTTPServiceGTMOAuthImpl.h; path = src/HTTPServiceGTMOAuthImpl.h; sourceTree = "<group>"; };
+		276ACBEF144C93010063635B /* HTTPServiceGTMOAuthImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HTTPServiceGTMOAuthImpl.m; path = src/HTTPServiceGTMOAuthImpl.m; sourceTree = "<group>"; };
 		2A37F4B0FDCFA73011CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2A37F4BAFDCFA73011CA2CEA /* English */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = English; path = English.lproj/Credits.rtf; sourceTree = "<group>"; };
 		2A37F4C4FDCFA73011CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
@@ -170,6 +177,7 @@
 				D38FE77A13233147003EB2D3 /* ParseKit.framework in Frameworks */,
 				8D15AC340486D014006FF6A4 /* Cocoa.framework in Frameworks */,
 				D357D5630EE63376009D62AE /* Security.framework in Frameworks */,
+				276ACBED144C928D0063635B /* GTMOAuth.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,6 +187,7 @@
 		1058C7A6FEA54F5311CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				276ACBEC144C928D0063635B /* GTMOAuth.framework */,
 				D357D5620EE63376009D62AE /* Security.framework */,
 				1058C7A7FEA54F5311CA2CBB /* Cocoa.framework */,
 			);
@@ -295,6 +304,8 @@
 				D357D5210EE6290B009D62AE /* HTTPService.h */,
 				D357D5220EE62958009D62AE /* HTTPServiceCFNetworkImpl.h */,
 				D357D5230EE62958009D62AE /* HTTPServiceCFNetworkImpl.m */,
+				276ACBEE144C93010063635B /* HTTPServiceGTMOAuthImpl.h */,
+				276ACBEF144C93010063635B /* HTTPServiceGTMOAuthImpl.m */,
 			);
 			name = HTTPService;
 			sourceTree = "<group>";
@@ -478,6 +489,7 @@
 				D357D8940EE7C0C0009D62AE /* TDSourceCodeTextView.m in Sources */,
 				D357DA800EE8E08C009D62AE /* TDHtmlSyntaxHighlighter.m in Sources */,
 				D36B89010F48CA27004BA0B3 /* HCHistoryManager.m in Sources */,
+				276ACBF0144C93010063635B /* HTTPServiceGTMOAuthImpl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -541,13 +553,19 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/frameworks\"",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = HTTPClient_Prefix.pch;
-				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/lib/ParseKit/include\"";
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/frameworks/GTMOAuth.framework/Headers\"",
+					"\"$(SRCROOT)/lib/ParseKit/include\"",
+				);
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				PRODUCT_NAME = "HTTP Client";
@@ -561,13 +579,18 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Todd Ditchendorf";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/frameworks\"",
+				);
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = HTTPClient_Prefix.pch;
-				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/lib/ParseKit/include\"";
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/frameworks/GTMOAuth.framework/Headers\"",
+					"\"$(SRCROOT)/lib/ParseKit/include\"",
+				);
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				PRODUCT_NAME = "HTTP Client";
